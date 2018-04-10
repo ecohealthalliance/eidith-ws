@@ -9,7 +9,7 @@ specimens <- ed2_specimens()
 tests <- ed2_tests()
 
 total.joined <- left_join(events, animals, by = "event_name") %>%
-  left_join(specimens, by = "animal_id") %>%
+  left_join(specimens, by = c("animal_id" = "animal_human_id")) %>%
   left_join(tests, by = "specimen_id")
 
 ?ed_metadata
